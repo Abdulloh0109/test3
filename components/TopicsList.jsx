@@ -32,7 +32,7 @@ export default async function TopicsList() {
           <div>
             <h2 className="font-bold text-2xl">{t.title}</h2>
             <div>{t.description}</div>
-            <div>{dayjs(t.createdAt).format('DD.MM.YYYY')}</div>
+            <div>{dayjs(t.updateAt).format('DD.MM.YYYY HH:MM')}</div>
           </div>
 
           <div className="flex gap-2">

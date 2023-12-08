@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
   const router = useRouter();
 
   const handleSubmit = async (e) => {

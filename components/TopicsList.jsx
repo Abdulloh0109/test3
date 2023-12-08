@@ -1,5 +1,5 @@
 import Link from "next/link";
-import RemoveBtn from "./RemoveBtn";
+import RemoveBtn from "./removeBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import dayjs from "dayjs";
 

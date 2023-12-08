@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar";
 import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { Inter } from "next/font/google";

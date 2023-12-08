@@ -55,12 +55,22 @@ export default function AddTopic() {
         placeholder="Topic Text"
       />
 
-      <button
-        type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
-      >
-        Add Topic
-      </button>
+      <div className="flex gap-2">
+        <button
+          type="submit"
+          className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+        >
+          Add Topic
+        </button>
+
+        <button
+          onClick={() => router.push("/")}
+          type="button"
+          className="border border-slate-500 font-bold text-black py-3 px-6 w-fit"
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   );
 }

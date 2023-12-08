@@ -3,24 +3,46 @@ import RemoveBtn from "./removeBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import dayjs from "dayjs";
 
-const getTopics = async () => {
+// const getTopics = async () => {
+//   try {
+//     const res = await fetch("http://localhost:3000/api/topics", {
+//       cache: "no-store",
+//     });
+
+//     if (!res.ok) {
+//       throw new Error("Failed to fetch topics");
+//     }
+
+//     return res.json();
+//   } catch (error) {
+//     console.log("Error loading topics: ", error);
+//   }
+// };
+
+export async function getServerSideProps() {
   try {
     const res = await fetch("http://localhost:3000/api/topics", {
       cache: "no-store",
     });
+    const topics = await res.data;
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch topics");
-    }
-
-    return res.json();
+    return {
+      props: { topics },
+    };
   } catch (error) {
-    console.log("Error loading topics: ", error);
+    return {
+      props: {
+        data: {},
+        error: error,
+      },
+    };
   }
-};
+}
 
-export default async function TopicsList() {
-  const { topics } = await getTopics();
+export default async function TopicsList({ topics = [] }) {
+  // const { topics } = await getTopics();
+
+  console.log("topics", topics);
 
   return (
     <>
@@ -32,7 +54,7 @@ export default async function TopicsList() {
           <div>
             <h2 className="font-bold text-2xl">{t.title}</h2>
             <div>{t.description}</div>
-            <div>{dayjs(t.updateAt).format('DD.MM.YYYY HH:MM')}</div>
+            <div>{dayjs(t.updateAt).format("DD.MM.YYYY HH:MM")}</div>
           </div>
 
           <div className="flex gap-2">

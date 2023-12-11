@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function Offline() {
-  return <div>Offline</div>;
+  return <div>Please check your internet connection and try again</div>;
 }

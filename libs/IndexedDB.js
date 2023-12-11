@@ -6,9 +6,9 @@ const openDB = () => {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, 1);
 
-    // request.onerror = (event) => {
-    //   reject(Error opening indexedDB: ${event.target.errorCode});
-    // };
+    request.onerror = (event) => {
+      reject(event.target.errorCode);
+    };
 
     request.onsuccess = (event) => {
       resolve(event.target.result);

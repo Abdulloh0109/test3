@@ -1,10 +1,8 @@
-"use client";
 import Navbar from "@/components/navbar";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { Inter } from "next/font/google";
 import { ToastContainer } from "react-toastify";
-import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,22 +29,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // useEffect(() => {
-  //   if ("serviceWorker" in navigator) {
-  //     navigator.serviceWorker
-  //       .register("/service-worker.js", { scope: "/" })
-  //       .then((registration) => {
-  //         console.log(
-  //           "Service worker registered successfully. Scope:",
-  //           registration.scope
-  //         );
-  //       })
-  //       .catch((error) => {
-  //         console.error("Service worker registration failed:", error);
-  //       });
-  //   }
-  // }, []);
-
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
